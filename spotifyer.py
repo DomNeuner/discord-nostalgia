@@ -3,7 +3,7 @@ import spotipy.util as util
 import os
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path=".\.env") # specifying the custom .env location as we're in a sub folder here
+load_dotenv() # specifying the custom .env location as we're in a sub folder here
 
 username = os.environ['SPOTIFY_USERNAME']
 client_id = os.environ['SPOTIFY_CLIENT_ID']
