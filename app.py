@@ -6,7 +6,11 @@ import time
 from pypresence import Presence
 from dotenv import load_dotenv
 
-# loading
+# my libs are cooler than your libs
+import spotifyer
+import msnifier
+
+# loading...
 load_dotenv()
 
 # enivronment variables
@@ -18,9 +22,12 @@ discord_presence.connect()
 
 def presence_process():
     current_time = time.ctime()
-    discord_presence.update(state=f'{current_time}',
-               details="what the fuck you looking at?")
-    time.sleep(15)  # Can only update rich presence every 15 seconds, don't want to annoy daddy discord
+    print(f"Beginning process at {current_time}")
+    current_title, current_artist, current_song_URL = spotifyer.check()
+    formatted_title, formatted_artist = msnifier.processor(current_title,current_artist)
+    discord_presence.update(state=f'by {formatted_artist}',
+               details=formatted_title)
+    time.sleep(15)  # Can only update rich presence every 15 seconds, don't want to annoy big daddy discord
 
 # it's the main event
 def main():
