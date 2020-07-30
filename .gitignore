@@ -4,3 +4,6 @@ venv/
 chromedriver.exe
 /.cache-domturnbull
 /debug.log
+__pycache__/
+ghostdriver.log
+phantomjs.exe

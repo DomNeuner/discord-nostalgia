@@ -13,7 +13,7 @@ style_list =['fed_', 'bbold_','big_']
 # functions bruh
 def processor(input_title, input_artist):
     # init the browser
-    browser = webdriver.Chrome('chromedriver.exe')
+    browser = webdriver.PhantomJS('phantomjs.exe')
     browser.get('https://nickstyler.de/')
 
     # wait until the form loads
